@@ -24,7 +24,7 @@
         android:layout_height="45dp">
 
         <ImageView
-            android:background="@drawable/person_foreground"
+            android:background="@drawable/mail_foreground"
             android:layout_width="45dp"
             android:layout_height="45dp"/>
         <EditText
@@ -67,6 +67,7 @@
 
 
     <RadioGroup
+        android:id="@+id/user_type"
         android:gravity="center"
         android:layout_margin="15dp"
         android:orientation="horizontal"
@@ -89,6 +90,7 @@
             android:layout_weight="1"
             android:buttonTint="#8BC34A"
             android:text="Patient"
+            android:checked="true"
             android:textColor="#8BC34A"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -135,7 +137,7 @@
         android:layout_marginTop="10dp"
         android:textColor="#FFFFFF"
         android:background="@drawable/button_set_1"
-        android:onClick="changeToPetsIntent"
+        android:onClick="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+
+    <EditText
+        android:layout_marginTop="50dp"
+        android:id="@+id/petname"
+        android:hint="Pet Name"
+        android:fontFamily="@font/comfortaa"
+        android:background="@drawable/edittext_set_2"
+        android:paddingLeft="10dp"
+        android:textColor="#4CAF50"
+        android:layout_width="250dp"
+        android:layout_height="50dp"/>
+    <Button
+        android:id="@+id/add"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/button_set_1"
+        android:layout_width="80dp"
+        android:text="ADD"
+        android:fontFamily="@font/comfortaa_bold"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
+        android:layout_height="40dp"/>
+
+</LinearLayout>

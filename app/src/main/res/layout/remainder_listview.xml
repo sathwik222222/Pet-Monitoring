@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_marginLeft="15dp"
+    android:layout_margin="15dp"
+    android:background="@drawable/remainder_listview_bg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/vaccine_name"
+        android:text="Vaccine"
+        android:textSize="13dp"
+        android:paddingLeft="10dp"
+        android:textColor="#FFFFFF"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/vaccine_remaining_days"
+        android:text="15"
+        android:textColor="#FFFFFF"
+        android:textSize="13dp"
+        android:paddingLeft="15dp"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/vaccine_gap"
+        android:text="20"
+        android:textColor="#FFFFFF"
+        android:layout_marginLeft="15dp"
+        android:paddingLeft="15dp"
+        android:textSize="13dp"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

@@ -7,10 +7,14 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
@@ -36,8 +40,8 @@ public class PetsDetails extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                new_pet(view);
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
             }
         });
 
@@ -98,4 +102,55 @@ public class PetsDetails extends AppCompatActivity {
         });
     }
 
+
+    public void new_pet(View view) {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.add_pet, null);
+        dialogBuilder.setView(dialogView);
+
+        Button add=dialogView.findViewById(R.id.add);
+        final EditText petname = (EditText) dialogView.findViewById(R.id.petname);
+
+        final AlertDialog alertDialog = dialogBuilder.create();
+        alertDialog.show();
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(check_Duplicate(petname.getText().toString())) {
+                    Toast.makeText(getApplicationContext(), "Duplicate Pet Found", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(getApplicationContext(), "Pet Added", Toast.LENGTH_SHORT).show();
+                    alertDialog.dismiss();
+                }
+            }
+        });
+    }
+    public boolean check_Duplicate(String name){
+        boolean flag=false;
+
+        /**
+        * check whether the pet name is already added or not
+        * if added
+        *   alert as duplicate
+        * else
+        *   add the pet
+        * */
+
+        return flag;
+    }
+
+
+    public void Logout(View view) {
+        /**
+         * Logout the user
+         * and
+         * remove shared preferences
+         * */
+
+        startActivity(new Intent(this,MainActivity.class));
+
+    }
 }

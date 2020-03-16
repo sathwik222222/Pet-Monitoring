@@ -28,7 +28,7 @@
             android:fontFamily="@font/comfortaa"
             android:hint="Name"
             android:background="@null"
-            android:inputType="number"
+            android:inputType="text"
             android:paddingRight="20dp" />
 
     </LinearLayout>
@@ -130,6 +130,7 @@
             android:layout_weight="1"
             android:buttonTint="#8BC34A"
             android:text="Patient"
+            android:checked="true"
             android:textColor="#8BC34A"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -143,6 +144,7 @@
         android:fontFamily="@font/comfortaa_bold"
         android:layout_marginTop="10dp"
         android:textColor="#FFFFFF"
+        android:onClick="SignUp"
         android:background="@drawable/button_set_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

@@ -12,7 +12,7 @@
         android:background="@drawable/toolbar"
         android:layout_width="match_parent"
         android:layout_height="50dp">
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="50dp">
             <TextView
@@ -22,14 +22,25 @@
                 android:paddingTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"/>
-        </LinearLayout>
+
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="7dp"
+                android:onClick="Logout"
+                android:src="@drawable/logout_foreground"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+
+        </RelativeLayout>
     </Toolbar>
 
     <ListView
         android:id="@+id/healthlist"
         android:dividerHeight="1dp"
         android:layout_margin="10dp"
-        android:divider="@drawable/toolbar"
+        android:footerDividersEnabled="false"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
