@@ -35,7 +35,6 @@ public class PetsDetails extends AppCompatActivity {
         setContentView(R.layout.activity_pets_details);
 
 
-
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

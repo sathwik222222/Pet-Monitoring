@@ -9,8 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DoctorCheck"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".SetHealthHistory"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".SetRemainder"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DoctorCheck"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".HealthHistory"
             android:theme="@style/AppTheme.NoActionBar" />

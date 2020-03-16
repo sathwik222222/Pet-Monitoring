@@ -28,8 +28,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
     }
-    public void changeToPetsIntent(View view) {
-        startActivity(new Intent(this,PetsDetails.class));
+    public void changeToPetsIntent(View view,String utype) {
+        if(utype.equals("Doctor")){
+            startActivity(new Intent(this,DoctorCheck.class));
+        }else{
+            startActivity(new Intent(this,PetsDetails.class));
+        }
     }
     public void signup(View view) {
         startActivity(new Intent(this,CreateAccount.class));
@@ -93,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         if(Authentication_Successfull(utype,mailid,password)) {
-            changeToPetsIntent(view);
+            changeToPetsIntent(view,utype);
         }else{
             Toast.makeText(this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
         }
