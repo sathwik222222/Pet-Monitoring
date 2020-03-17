@@ -37,9 +37,14 @@ public class HealthHistory extends AppCompatActivity {
     public void Logout(View view) {
         /**
          *
+         *
+         *
+         *
          *logout
          * and
          * remove shared preferences
+         *
+         *
          *
          *
          * */

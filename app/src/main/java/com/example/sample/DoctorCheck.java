@@ -98,10 +98,43 @@ public class DoctorCheck extends AppCompatActivity {
 
     public void Logout(View view) {
 
+        /**
+         *
+         *
+         *
+         *
+         *logout
+         * and
+         * remove shared preferences
+         *
+         *
+         *
+         *
+         * */
+        startActivity(new Intent(this,MainActivity.class));
+
     }
 
     public void Searching(View view) {
-
+        /***
+         *
+         *
+         *
+         *
+         *
+         *
+         * Search the mail ID
+         * from the
+         * past database
+         * display the pets with that
+         * mail ID
+         *
+         *
+         *
+         *
+         *
+         *
+         * **/
 
 
     }

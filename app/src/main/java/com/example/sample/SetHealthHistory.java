@@ -33,6 +33,22 @@ public class SetHealthHistory extends AppCompatActivity {
     }
 
     public void Logout(View view) {
+
+        /**
+         *
+         *
+         *
+         *
+         *logout
+         * and
+         * remove shared preferences
+         *
+         *
+         *
+         *
+         * */
+        startActivity(new Intent(this,MainActivity.class));
+
     }
 
     public void new_history(View view) {

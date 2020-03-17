@@ -144,11 +144,18 @@ public class PetsDetails extends AppCompatActivity {
 
     public void Logout(View view) {
         /**
-         * Logout the user
+         *
+         *
+         *
+         *
+         *logout
          * and
          * remove shared preferences
+         *
+         *
+         *
+         *
          * */
-
         startActivity(new Intent(this,MainActivity.class));
 
     }

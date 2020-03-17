@@ -38,14 +38,19 @@ public class Remainder extends AppCompatActivity {
     }
 
     public void Logout(View view) {
-        /*
-        *
-        *
-        * Logout and
-        * remove the shared preferences
-        *
-        *
-        * */
+        /**
+         *
+         *
+         *
+         *
+         *logout
+         * and
+         * remove shared preferences
+         *
+         *
+         *
+         *
+         * */
         startActivity(new Intent(this,MainActivity.class));
     }
 }

@@ -37,12 +37,19 @@ public class ForgotPassword extends AppCompatActivity {
         if(!validateMail(mail)){
             return;
         }else{
-            Toast.makeText(this, "Conformation Mail Sent", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Reset Password Mail Sent", Toast.LENGTH_SHORT).show();
         }
         /**
          *
          *
+         *
+         *
+         *
+         *
          * Process of Sending Mail
+         *
+         *
+         *
          *
          *
          *
