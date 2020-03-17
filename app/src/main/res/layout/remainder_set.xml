@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:layout_marginTop="20dp"
+    android:padding="20dp"
+    android:layout_width="300dp"
+    android:layout_height="150dp">
+
+    <EditText
+        android:id="@+id/vaccine_name_REM"
+        android:paddingLeft="20dp"
+        android:hint="Vaccine"
+        android:background="@drawable/edittext_set_2"
+        android:fontFamily="@font/comfortaa"
+        android:layout_width="match_parent"
+        android:textSize="14sp"
+        android:layout_height="30sp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:layout_height="80dp">
+            <TextView
+                android:textSize="11sp"
+                android:text="Remaining Days"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/remaining_days_REM"
+                android:inputType="number"
+                android:paddingLeft="15sp"
+                android:background="@drawable/edittext_set_2"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:layout_height="50dp">
+            <TextView
+                android:textSize="11sp"
+                android:text="Vaccine Interval"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/interval_days_REM"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:paddingLeft="15sp"
+                android:background="@drawable/edittext_set_2"
+                android:inputType="number" />
+        </LinearLayout>
+    </LinearLayout>
+    <Button
+        android:id="@+id/save_remainder"
+        android:layout_marginTop="5dp"
+        android:text="Save"
+        android:fontFamily="@font/comfortaa_bold"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:background="@drawable/button_set_1"
+        android:layout_gravity="right"
+        android:layout_width="80dp"
+        android:layout_height="30dp"/>
+</LinearLayout>

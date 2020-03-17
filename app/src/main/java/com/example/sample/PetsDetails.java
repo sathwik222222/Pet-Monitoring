@@ -1,14 +1,11 @@
 package com.example.sample;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -146,16 +143,13 @@ public class PetsDetails extends AppCompatActivity {
 
 
     public void Logout(View view) {
+        /**
+         * Logout the user
+         * and
+         * remove shared preferences
+         * */
 
-        SharedPreferences sharedpreferences = getSharedPreferences("PetMonitoring", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedpreferences.edit();
-        Toast.makeText(PetsDetails.this,"Logging out....",Toast.LENGTH_SHORT).show();
-
-        editor.putString("user_type", "");
-        editor.commit();
-        FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(this,MainActivity.class));
-        finish();
 
     }
 }

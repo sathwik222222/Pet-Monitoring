@@ -1,17 +1,11 @@
 package com.example.sample;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -43,17 +37,15 @@ public class ForgotPassword extends AppCompatActivity {
         if(!validateMail(mail)){
             return;
         }else{
-            FirebaseAuth.getInstance().sendPasswordResetEmail("user@example.com")
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                Log.d("Forgot Password", "Email sent.");
-
-                                Toast.makeText(ForgotPassword.this, "Conformation Mail Sent", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
+            Toast.makeText(this, "Conformation Mail Sent", Toast.LENGTH_SHORT).show();
         }
+        /**
+         *
+         *
+         * Process of Sending Mail
+         *
+         *
+         *
+         * */
     }
 }
