@@ -24,20 +24,6 @@ public class SetHealthHistory extends AppCompatActivity {
         final String petsublist=intent.getStringExtra("petsublist");
         Toast.makeText(this,petname+"->"+petsublist,Toast.LENGTH_LONG).show();
 
-        /**
-         *
-         *
-         *
-         * Retrieve Data from
-         * database
-         * date and pet problem
-         * and set
-         * date , problem
-         *
-         *
-         *
-         * **/
-
         String[] date={"01/12/2012","02/10/2020","23/10/1998","09/08/1997"};
         String[] problem={"Problem of Asthama and shivering due to ceasers and trauma","Chronic Disorder","Shivering, No Movement and Alergy due to high concentration environmental locations","Alergy"};
         HealthHistoryAdapter adapter=new HealthHistoryAdapter(this, date, problem);
@@ -47,22 +33,6 @@ public class SetHealthHistory extends AppCompatActivity {
     }
 
     public void Logout(View view) {
-
-        /**
-         *
-         *
-         *
-         *
-         *logout
-         * and
-         * remove shared preferences
-         *
-         *
-         *
-         *
-         * */
-        startActivity(new Intent(this,MainActivity.class));
-
     }
 
     public void new_history(View view) {

@@ -27,25 +27,9 @@ public class Remainder extends AppCompatActivity {
         final String petsublist=intent.getStringExtra("petsublist");
         Toast.makeText(this,petname+"->"+petsublist,Toast.LENGTH_LONG).show();
 
-
-        /**
-         *
-         *
-         *
-         * Retrieve Data from
-         * database
-         * vaccine name and days remaining and intervel for every vaccine
-         * and set
-         * vaccine, days_remaining, gap_days
-         *
-         *
-         *
-         * **/
-
-
-        vaccine= new String[]{"Distemper", "Measles", "Parainfluenza", "DHPP", "Rabies"};
-        days_remaining= new int[]{12, 10, 1, 19, 22};
-        gap_days= new int[]{30, 20, 15, 25, 25};
+        String[] vaccine={"Distemper","Measles","Parainfluenza","DHPP","Rabies"};
+        int[] days_remaining={12,10,1,19,22};
+        int[] gap_days={30,20,15,25,25};
 
         RemainderAdapter adapter=new RemainderAdapter(this, vaccine, days_remaining,gap_days);
         list=(ListView)findViewById(R.id.remainder);
@@ -54,19 +38,14 @@ public class Remainder extends AppCompatActivity {
     }
 
     public void Logout(View view) {
-        /**
-         *
-         *
-         *
-         *
-         *logout
-         * and
-         * remove shared preferences
-         *
-         *
-         *
-         *
-         * */
+        /*
+        *
+        *
+        * Logout and
+        * remove the shared preferences
+        *
+        *
+        * */
         startActivity(new Intent(this,MainActivity.class));
     }
 }
