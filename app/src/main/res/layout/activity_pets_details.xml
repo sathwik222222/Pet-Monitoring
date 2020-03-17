@@ -9,8 +9,6 @@
     tools:context=".PetsDetails">
 
 
-
-
     <ExpandableListView
         android:layout_marginTop="55dp"
         android:id="@+id/expandableListView"
@@ -22,8 +20,6 @@
 
 
     </ExpandableListView>
-
-
 
 
     <com.google.android.material.appbar.AppBarLayout

@@ -1,15 +1,25 @@
 package com.example.sample;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -19,6 +29,9 @@ public class CreateAccount extends AppCompatActivity {
     public EditText nameET,mailET,phoneET,passwordET;
     public RadioGroup userTypeRG;
     RadioButton rb;
+    private ProgressBar loadingProgressBar;
+    private FirebaseAuth mAuth;
+    private String TAG="CreateAccount";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +43,10 @@ public class CreateAccount extends AppCompatActivity {
         passwordET=findViewById(R.id.userpwd);
         userTypeRG=findViewById(R.id.user_type);
 
+        //TODO
+        //loadingProgressBar = (ProgressBar)findViewById(R.id.loading);
+
+        mAuth = FirebaseAuth.getInstance();
 
 
     }
@@ -48,21 +65,59 @@ public class CreateAccount extends AppCompatActivity {
         }
 
         if(validateAll(name,mail,phone,password)){
-            /**
-             *
-             *
-             *
-             *
-             * Process to signUp
-             *
-             *
-             *
-             *
-             *
-             * */
-            Toast.makeText(this, "Conformation Mail Sent", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this,MainActivity.class));
 
+            //TODO
+            //loadingProgressBar.setVisibility(View.VISIBLE);
+            Log.d(TAG,"email : "+mail);
+            mAuth.createUserWithEmailAndPassword(mail, password)
+                    .addOnCompleteListener(CreateAccount.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            //TODO
+                            //loadingProgressBar.setVisibility(View.GONE);
+                            Log.d("created user","yes");
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d(TAG, "createUserWithEmail:success");
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                if(user!=null) {
+                                    Log.d("user created",user.toString());
+                                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                            .setDisplayName(name)
+                                            .build();
+                                    user.updateProfile(profileUpdates)
+                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if (task.isSuccessful()) {
+                                                        Log.d(TAG, "User profile updated.");
+                                                    }
+                                                }
+                                            });
+                                    user.sendEmailVerification()
+                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if (task.isSuccessful()) {
+                                                        Log.d(TAG, "Email sent.");
+                                                        Toast.makeText(CreateAccount.this, "An Email is on its Way , Please Verify yourself.",
+                                                                Toast.LENGTH_LONG).show();
+                                                    }
+                                                }
+                                            });
+                                    FirebaseAuth.getInstance().signOut();
+                                    Intent mainIntent = new Intent(CreateAccount.this, MainActivity.class);
+                                    startActivity(mainIntent);
+                                    finish();
+                                }
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                Toast.makeText(CreateAccount.this, "Authentication failed.",
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
         }
     }
     public  boolean validateAll(String name,String mail,String phone,String password){
