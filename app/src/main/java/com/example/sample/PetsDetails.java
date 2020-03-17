@@ -40,7 +40,6 @@ public class PetsDetails extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 new_pet(view);
-                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
             }
         });
 
